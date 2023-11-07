@@ -1,0 +1,26 @@
+{% include 'admin_header.html' %}
+
+<form action="" method="post">
+    <table class="table table-striped" style="width: 1200px;">
+
+        <tr>
+            <th>Blood group</th>
+            <th>Details</th>
+            <th>Blood expiry</th>
+            <th>Status</th>
+        </tr>
+
+        {% for i in docview %}
+        <tr>
+            <td>{{i.b_group}}</td>
+            <td>{{i.b_details}}</td>
+            <td>{{i.b_expiry}}</td>
+            <td>{{i.b_status}}</td>
+            
+        </tr>
+        {% endfor %}
+
+    </table>  
+</form>
+
+{% include 'footer.html' %}
