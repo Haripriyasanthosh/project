@@ -1,0 +1,19 @@
+<!-- search_blood_group.html -->
+{% include 'admin_header.html' %}
+    <form method="get">
+        <label for="query">Enter Blood Group:</label>
+        <input type="text" id="query" name="query" value="{{ query }}">
+        <button type="submit">Search</button>
+    </form>
+    
+    {% comment %} <h2>Search Results:</h2> {% endcomment %}
+    <ul>
+        {% for blood_group in results %}
+            <li>{{ blood_group.b_group }} (Availability: {{ blood_group.b_status }})</li>
+        {% comment %} {% empty %}
+            <li>No results found.</li> {% endcomment %}
+        {% endfor %}
+    </ul>
+
+    {% include 'footer.html' %}
+
