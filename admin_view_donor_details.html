@@ -1,0 +1,32 @@
+{% include 'admin_header.html' %}
+
+<form action="" method="post">
+    <table class="table table-striped" style="width: 1200px;">
+
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Blood Type</th>
+            <th>Phone</th>
+            <th>Address</th>
+        </tr>
+
+        {% for i in docview %}
+        <tr>
+            <td>{{i.full_name}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.blod_type}}</td>
+            <td>{{i.phone}}</td>
+            <td>{{i.address}}</td>
+            <td><a href="/delete_donor/{{i.login_id}}" class="btn btn-warning">Delete</a></td> 
+            <td><a href="/update_donor/{{i.login_id}}" class="btn btn-warning">Update</a></td>
+            
+
+
+        </tr>
+        {% endfor %}
+
+    </table>  
+</form>
+
+{% include 'footer.html' %}
