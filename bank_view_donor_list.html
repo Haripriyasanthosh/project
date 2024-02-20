@@ -1,0 +1,66 @@
+{% include 'bank_header.html' %}
+<center>
+<form action="" method="post">
+    <pre>
+
+    </pre>
+    <h2>Donor list</h2>
+    <br>
+    <br>
+  
+    
+    <table class="table table-striped" style="width: 1200px;">
+        <tr>
+
+            <th>Name</th>
+            <th>Email</th>
+            <th>Blood Group</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Last donation date</th>
+
+            
+            
+
+            
+            
+        </tr>
+
+        {% for i in docview %}
+        <tr>
+           
+            <td>{{i.donor.full_name}}</td>
+            <td>{{i.donor.blod_type}}</td>
+            <td>{{i.donor.email}}</td>
+            <td>{{i.donor.phone}}</td>
+            <td>{{i.donor.address}}</td>
+            <td>{{i.donor.last_donation_date}}</td>
+            
+            {% if i.donor_status == 'Pending' %}
+
+            {% comment %} <td><a href="/accept_req/{{i.id}}/{{i.user_id}}" class="btn btn-warning">Accept</a></td>
+            <td><a href="/reject_req/{{i.id}}/{{i.user_id}}" class="btn btn-warning">Reject</a></td> {% endcomment %}
+            {% endif %}
+
+        </tr>
+        {% endfor %}
+
+    </table>  
+</form>
+</center>
+
+<pre>
+
+
+
+
+
+
+
+
+
+
+</pre>
+
+
+{% include 'footer.html' %}
